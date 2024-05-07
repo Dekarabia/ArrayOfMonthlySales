@@ -2,7 +2,7 @@ package ru.Netology.javaqa.ArrayOfMonthlySales.services;
 
 public class StatsService {
 
-    public int theAmountOfSales(int[] sales) {
+    public int theAmountOfSales(long[] sales) {
         //сумма всех продаж
         int total = 0;
         for (int i = 0; i < sales.length; i++) {
@@ -11,7 +11,7 @@ public class StatsService {
         return total;
     }
 
-    public int averageSalesAmount(int[] sales) {
+    public int averageSalesAmount(long[] sales) {
         //средняя сумма продаж в месяц
         int total = 0;
         for (int i = 0; i < sales.length; i++) {
@@ -42,7 +42,7 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int belowAverage(int[] sales) {
+    public int belowAverage(long[] sales) {
         //продажи ниже среднего
         int numberOfMonth = 0;
         int average = (int) averageSalesAmount (sales);
@@ -54,7 +54,7 @@ public class StatsService {
         return numberOfMonth;
     }
 
-    public int aboveAverage(int[] sales) {
+    public int aboveAverage(long[] sales) {
         //продажи выше среднего
         int numberOfMonth = 0;
         int average = (int) averageSalesAmount (sales);

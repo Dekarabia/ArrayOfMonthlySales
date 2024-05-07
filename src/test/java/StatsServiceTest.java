@@ -7,7 +7,7 @@ public class StatsServiceTest {
     @Test
     public void shouldTheAmountOfSales() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
         int actual = service.theAmountOfSales(sales);
 
@@ -17,7 +17,7 @@ public class StatsServiceTest {
     @Test
     public void shouldAverageSalesAmount() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
         int actual = service.averageSalesAmount(sales);
 
@@ -47,7 +47,7 @@ public class StatsServiceTest {
     @Test
     public void shouldBelowAverage() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 7;
         int actual = service.belowAverage(sales);
 
@@ -57,7 +57,7 @@ public class StatsServiceTest {
     @Test
     public void shouldAboveAverage() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 7;
         int actual = service.aboveAverage(sales);
 
