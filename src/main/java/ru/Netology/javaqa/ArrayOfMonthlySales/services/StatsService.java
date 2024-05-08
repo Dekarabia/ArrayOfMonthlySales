@@ -2,68 +2,68 @@ package ru.Netology.javaqa.ArrayOfMonthlySales.services;
 
 public class StatsService {
 
-    public int theAmountOfSales(long[] sales) {
+    public long theAmountOfSales(long[] sales) {
         //сумма всех продаж
         long total = 0;
         for (long i = 0; i < sales.length; i++) {
-            total += sales[(int) i];
+            total += sales[Math.toIntExact((long) i)];
         }
-        return (int) total;
+        return total;
     }
 
-    public int averageSalesAmount(long[] sales) {
+    public long averageSalesAmount(long[] sales) {
         //средняя сумма продаж в месяц
         long total = 0;
         for (long i = 0; i < sales.length; i++) {
-            total += sales[(int) i];
+            total += sales[Math.toIntExact((long) i)];
         }
-        return (int) (total / sales.length);
+        return (total / sales.length);
     }
 
-    public int minSales(long[] sales) {
+    public long minSales(long[] sales) {
         //минимум продаж
         long minMonth = 0;
         for (long i = 0; i < sales.length; i++) {
-            if (sales[(int) i] <= sales[(int) minMonth]) {
+            if (sales[Math.toIntExact((long) i)] <= sales[Math.toIntExact((long) minMonth)]) {
                 minMonth = i;
             }
         }
-        return (int) (minMonth + 1);
+        return (minMonth + 1);
     }
 
-    public int maxSales(long[] sales) {
+    public long maxSales(long[] sales) {
         // максимум продаж
         long maxMonth = 0;
         for (long i = 0; i < sales.length; i++) {
-            if (sales[(int) i] >= sales[(int) maxMonth]) {
+            if (sales[Math.toIntExact((long) i)] >= sales[Math.toIntExact((long) maxMonth)]) {
                 maxMonth = i;
             }
         }
-        return (int) (maxMonth + 1);
+        return (maxMonth + 1);
     }
 
-    public int belowAverage(long[] sales) {
+    public long belowAverage(long[] sales) {
         //продажи ниже среднего
         long numberOfMonth = 0;
-        long average = (int) averageSalesAmount(sales);
+        long average = averageSalesAmount (sales);
         for (long i = 0; i < sales.length; i++) {
-            if (sales[(int) i] >= average) {
+            if (sales[Math.toIntExact((long) i)] >= average) {
                 numberOfMonth = numberOfMonth + 1;
             }
         }
-        return (int) numberOfMonth;
+        return numberOfMonth;
     }
 
-    public int aboveAverage(long[] sales) {
+    public long aboveAverage(long[] sales) {
         //продажи выше среднего
         long numberOfMonth = 0;
-        long average = (int) averageSalesAmount(sales);
+        long average = averageSalesAmount(sales);
         for (long i = 0; i < sales.length; i++) {
-            if (sales[(int) i] <= average) {
+            if (sales[Math.toIntExact((long) i)] <= average) {
                 numberOfMonth = numberOfMonth + 1;
             }
         }
-        return (int) numberOfMonth;
+        return numberOfMonth;
     }
 }
 
