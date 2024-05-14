@@ -20,33 +20,33 @@ public class StatsService {
         return (total / sales.length);
     }
 
-    public long minSales(long[] sales) {
+    public int minSales(long[] sales) {
         //минимум продаж
         int minMonth = 0;
-        for (long i = 0; i < sales.length; i++) {
+        for (int i = 0; i < sales.length; i++) {
             if (sales[Math.toIntExact(i)] <= sales[Math.toIntExact(minMonth)]) {
-                minMonth = (int) i;
+                minMonth = i;
             }
         }
         return (minMonth + 1);
     }
 
-    public long maxSales(long[] sales) {
+    public int maxSales(long[] sales) {
         // максимум продаж
         int maxMonth = 0;
-        for (long i = 0; i < sales.length; i++) {
+        for (int i = 0; i < sales.length; i++) {
             if (sales[Math.toIntExact(i)] >= sales[Math.toIntExact(maxMonth)]) {
-                maxMonth = (int) i;
+                maxMonth = i;
             }
         }
         return (maxMonth + 1);
     }
 
-    public long belowAverage(long[] sales) {
+    public int belowAverage(long[] sales) {
         //продажи ниже среднего
         int numberOfMonth = 0;
-        long average = averageSalesAmount(sales);
-        for (long i = 0; i < sales.length; i++) {
+        int average = (int) averageSalesAmount(sales);
+        for (int i = 0; i < sales.length; i++) {
             if (sales[Math.toIntExact(i)] >= average) {
                 numberOfMonth = numberOfMonth + 1;
             }
@@ -57,8 +57,8 @@ public class StatsService {
     public long aboveAverage(long[] sales) {
         //продажи выше среднего
         int numberOfMonth = 0;
-        long average = averageSalesAmount(sales);
-        for (long i = 0; i < sales.length; i++) {
+        int average = (int) averageSalesAmount(sales);
+        for (int i = 0; i < sales.length; i++) {
             if (sales[Math.toIntExact(i)] <= average) {
                 numberOfMonth = numberOfMonth + 1;
             }
