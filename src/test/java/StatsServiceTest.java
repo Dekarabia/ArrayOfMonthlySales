@@ -38,7 +38,7 @@ public class StatsServiceTest {
     public void shouldMaxSales() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 8;
+        long expected = 6;
         long actual = service.maxSales(sales);
 
         Assertions.assertEquals(expected, actual);
@@ -48,7 +48,7 @@ public class StatsServiceTest {
     public void shouldBelowAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 7;
+        long expected = 5;
         long actual = service.belowAverage(sales);
 
         Assertions.assertEquals(expected, actual);
@@ -58,7 +58,7 @@ public class StatsServiceTest {
     public void shouldAboveAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 7;
+        long expected = 5;
         long actual = service.aboveAverage(sales);
 
         Assertions.assertEquals(expected, actual);
